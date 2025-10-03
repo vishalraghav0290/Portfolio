@@ -1,7 +1,7 @@
 import React from 'react'
 import SkillsSection from '../Model/skill'
 
-function Home() {
+function Home({ onNavigate }) {
   return (
     <div className='bg-black  w-full h-screen gap-[20px]'>
       {/* desging navbar */}
@@ -11,6 +11,7 @@ function Home() {
         <div className='flex font-Poppins text-xl '>Project</div>
         <div className='flex font-Poppins text-xl '>Skill</div>
         <div className='flex font-Poppins text-xl '>Connect</div>
+        <button onClick={() => onNavigate && onNavigate('github')} className='ml-4 text-xl text-blue-300'>GitHub</button>
 
       </div>
       {/* done designing navbar */}
