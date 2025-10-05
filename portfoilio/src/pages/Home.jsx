@@ -2,6 +2,7 @@ import React from 'react'
 import SkillsSection from '../Model/skill'
 import TextUp from '../components/TextUp'
 import LaserFlow from '../components/laserAnimation'
+import { Link } from 'react-router-dom'
 
 
 
@@ -23,7 +24,7 @@ function Home({ onNavigate }) {
         alpha: false
       }}>
         <LaserFlow
-          color="#FF79C6"
+          color="#E8E5EB"
           wispDensity={1}
           fogIntensity={0.45}
         />
@@ -32,11 +33,10 @@ function Home({ onNavigate }) {
       {/* desging navbar */}
       <div className='flex justify-between items-center text-white'>VR</div>
       <div className='hidden md:flex justify-center items-center flex-grow gap-5 text-white '>
-        <div className='flex font-Poppins text-xl '>Work</div>
-        <div className='flex font-Poppins text-xl '>Project</div>
-        <div className='flex font-Poppins text-xl '>Skill</div>
-        <div className='flex font-Poppins text-xl '>Connect</div>
-        <button onClick={() => onNavigate && onNavigate('github')} className='ml-4 text-xl text-blue-300'>GitHub</button>
+        <Link to="/project" className='font-Poppins text-xl'>Project</Link>
+        <Link to="/skill" className='font-Poppins text-xl'>Skill</Link>
+        <Link to="/connectUs" className='font-Poppins text-xl'>Connect</Link>
+        <Link to="/github" className='ml-4 text-xl text-blue-300'>GitHub</Link>
 
       </div>
       {/* done designing navbar */}
