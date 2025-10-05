@@ -5,6 +5,7 @@ import { Canvas, useFrame, useLoader, useThree, invalidate } from '@react-three/
 import { OrbitControls, useGLTF, useFBX, useProgress, Html, Environment, ContactShadows } from '@react-three/drei';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 import * as THREE from 'three';
+import TextTrail from './TextTrail';
 
 const isTouch = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
 const deg2rad = d => (d * Math.PI) / 180;
@@ -88,7 +89,7 @@ const ModelInner = ({
   const pivotW = useRef(new THREE.Vector3());
   useLayoutEffect(() => {
     if (!content || hasInitialized.current) return;
-    
+
     hasInitialized.current = true;
     const g = inner.current;
     g.updateWorldMatrix(true, true);
@@ -427,7 +428,7 @@ const ModelViewer = ({
         height,
         touchAction: 'pan-y pinch-zoom'
       }}
-      className="absoulte "
+      className="absoulte justify-between "
     >
       {showScreenshotButton && (
         <button
@@ -487,14 +488,18 @@ const ModelViewer = ({
             autoRotate={autoRotate}
             autoRotateSpeed={autoRotateSpeed}
             onLoaded={onModelLoaded}
-            
+
           />
         </Suspense>
 
         {!isTouch && (
           <DesktopControls pivot={pivot} min={minZoomDistance} max={maxZoomDistance} zoomEnabled={enableManualZoom} />
         )}
+
       </Canvas>
+      <div className="absolute left-[5%] top-1/2 -translate-y-1/2 w-[40%] h-[50%] z-10">
+  <TextTrail text="Fast as lightning." />
+</div>
     </div>
   );
 };
