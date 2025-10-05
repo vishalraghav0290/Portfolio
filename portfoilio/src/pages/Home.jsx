@@ -1,9 +1,34 @@
 import React from 'react'
 import SkillsSection from '../Model/skill'
+import TextUp from '../components/TextUp'
+import LaserFlow from '../components/laserAnimation'
+
+
+
+
 
 function Home({ onNavigate }) {
   return (
-    <div className='bg-black  w-full h-screen gap-[20px]'>
+
+    <div style={{ position: 'relative', minHeight: '100vh', background: '#000' }}>
+
+      {/* Background Animation - Fixed Layer */}
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: "20%",
+        width: '100%',
+        height: '100%',
+        zIndex: 0,
+        alpha: false
+      }}>
+        <LaserFlow
+          color="#FF79C6"
+          wispDensity={1}
+          fogIntensity={0.45}
+        />
+      </div>
+      <div style={{ position: 'relative', zIndex: 1 }}>
       {/* desging navbar */}
       <div className='flex justify-between items-center text-white'>VR</div>
       <div className='hidden md:flex justify-center items-center flex-grow gap-5 text-white '>
@@ -21,7 +46,10 @@ function Home({ onNavigate }) {
 
       <div className='flex flex-col justify-center items-center text-white gap-5'>
         <img src='src/assets/iron-man-5783522_1280.webp' className='w-40 h-50 rounded-full pt-[40px]' alt='profile' />
-        <h3 className='text-6xl font-bold text-white'>Vishal Raghav</h3>
+        <TextUp
+          text="Vishal Raghav"
+          className='text-6xl font-bold text-white font-mono mb-2'
+        />
         <p className='text-gray-400 text-base text-center pt-5 mb-4 '>Full-Stack Developer (MERN) Intern @ DigiVikreta |  Univiserty of Mangalaytan
           <span className='bl;ock text-white flex items-centre justify-center'>
             <div className='flex items-center justify-center'>
@@ -111,8 +139,8 @@ function Home({ onNavigate }) {
 
       <SkillsSection />
 
-
     </div>
+    </div >
   )
 }
 
