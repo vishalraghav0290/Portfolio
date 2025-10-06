@@ -109,9 +109,9 @@ const TextTrail = ({
   rgbPersistFactor = 0.98,
   alphaPersistFactor = 0.95,
   animateColor = false,
-  startColor = '#ffffff',
-  textColor = '#ffffff',
-  backgroundColor = 0x271e37,
+  startColor = '#cccccc', // shiny grey
+  textColor = '#cccccc',  // shiny grey
+  backgroundColor = 'transparent', // transparent background
   colorCycleInterval = 3000,
   supersample = 2
 }) => {
@@ -129,8 +129,8 @@ const TextTrail = ({
     });
     let { w, h } = size();
 
-    const renderer = new WebGLRenderer({ antialias: true });
-    renderer.setClearColor(new Color(backgroundColor), 1);
+    const renderer = new WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setClearColor(new Color(0x000000), 0); // transparent
     renderer.setPixelRatio(window.devicePixelRatio || 1);
     renderer.setSize(w, h);
     ref.current.appendChild(renderer.domElement);
@@ -192,9 +192,9 @@ const TextTrail = ({
       ctx.clearRect(0, 0, max, max);
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = 'high';
-      ctx.shadowColor = 'rgba(255,255,255,0.3)';
-      ctx.shadowBlur = 2;
-      ctx.fillStyle = '#fff';
+      ctx.shadowColor = 'rgba(255,255,255,0.5)';
+      ctx.shadowBlur = 10;
+      ctx.fillStyle = '#cccccc'; // shiny grey
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
 
@@ -316,7 +316,17 @@ const TextTrail = ({
     supersample
   ]);
 
-  return <div ref={ref} className="absolute inset-0 z-10 w-1/2 h-full" />;;
+  return (
+    <div 
+      ref={ref} 
+      className="fixed left-0 top-1/3 -translate-y-1/2 w-[500px] h-[200px] pointer-events-none z-50"
+      style={{ 
+        mixBlendMode: 'difference',
+        willChange: 'transform',
+        background: 'transparent'
+      }}
+    />
+  );
 };
 
 export default TextTrail;

@@ -459,7 +459,7 @@ const ModelViewer = ({
             : { fov: 50, position: [0, 0, camZ], near: 0.01, far: 100 }
         }
         style={{ touchAction: 'pan-y pinch-zoom' }}
-      >
+            >
         {environmentPreset !== 'none' && <Environment preset={environmentPreset} background={false} />}
 
         <ambientLight intensity={ambientIntensity} />
@@ -488,7 +488,6 @@ const ModelViewer = ({
             autoRotate={autoRotate}
             autoRotateSpeed={autoRotateSpeed}
             onLoaded={onModelLoaded}
-
           />
         </Suspense>
 
@@ -496,10 +495,49 @@ const ModelViewer = ({
           <DesktopControls pivot={pivot} min={minZoomDistance} max={maxZoomDistance} zoomEnabled={enableManualZoom} />
         )}
 
-      </Canvas>
-      <div className="absolute left-[5%] top-1/2 -translate-y-1/2 w-[40%] h-[50%] z-10">
-  <TextTrail text="Fast as lightning." />
-</div>
+            </Canvas>
+
+            <div className="absolute left-8 top-1/2 -translate-y-1/2 z-10">
+        <div className="max-w-[50rem]">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6" style={{ fontFamily: 'Figtree, sans-serif' }}>
+            Connect with us on LinkedIn and Github
+          </h2>
+
+          <div className="flex flex-col gap-4 mb-6">
+            <button
+              onClick={() => window.open('https://www.linkedin.com/in/vishal-raghav-747a61251/', '_blank')}
+              className="w-36 md:w-40 text-left bg-gray-800 text-white px-5 py-3 rounded-lg shadow-lg hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-300"
+            >
+              Linkedin
+            </button>
+
+            <button
+              onClick={() => window.open('https://github.com/vishalraghav0290', '_blank')}
+              className="w-36 md:w-40 text-left bg-[#2B6CB0] text-white px-5 py-3 rounded-lg shadow-lg hover:bg-[#235a95] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300"
+            >
+              Github
+            </button>
+          </div>
+
+          <p className="text-sm text-gray-500 mb-4 leading-relaxed">
+            Hi, I am Vishal Raghav, a frontend developer excited to connect with you and work on interesting projects. I'm open to opportunities and passionate about designing beautiful user interfaces.
+          </p>
+          <p className="text-sm text-gray-500 leading-relaxed">
+            My core skills are React, Tailwind CSS, and React Native. I have a keen interest in frontend design and development, and I'm always looking to collaborate and build something amazing together.
+          </p>
+        </div>
+            </div>
+            {/* <TextTrail 
+        text="Connect with me on LinkedIn: linkedin.com/in/vishal-raghav-7b4b35210" 
+        fontFamily="Figtree"
+        fontWeight="900"
+        noiseFactor={2}
+        noiseScale={0.001}
+        rgbPersistFactor={0.99}
+        alphaPersistFactor={0.97}
+        animateColor={true}
+        colorCycleInterval={2000}
+            /> */}
     </div>
   );
 };
