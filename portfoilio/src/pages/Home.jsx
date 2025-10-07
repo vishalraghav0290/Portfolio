@@ -11,7 +11,8 @@ import { Link } from 'react-router-dom'
 function Home({ onNavigate }) {
   return (
 
-    <div style={{ position: 'relative', minHeight: '100vh', background: '#000' }}>
+    <div style={{ position: 'relative', minHeight: '100vh', background: 'gray-700' }}>
+      co
 
       {/* Background Animation - Fixed Layer */}
       <div style={{
@@ -33,10 +34,10 @@ function Home({ onNavigate }) {
         {/* desging navbar */}
         <div className='flex justify-between items-center text-white'>VR</div>
         <div className='hidden md:flex justify-center items-center flex-grow gap-5 text-white '>
-          <Link to="/project" className='font-Poppins text-xl'>Project</Link>
-          <Link to="/skill" className='font-Poppins text-xl'>Skill</Link>
-          <Link to="/connectUs" className='font-Poppins text-xl'>Connect</Link>
-          <Link to="/github" className='ml-4 text-xl text-blue-300'>GitHub</Link>
+          <Link to="/feedback" className='font-Poppins text-xl text-black'>FeedBack</Link>
+          <Link to="/resume" className='font-Poppins text-xl text-black'>Resume</Link>
+          <Link to="/connectUs" className='font-Poppins text-xl text-black'>Connect</Link>
+          <Link to="/github" className='ml-4 text-xl text-black'>GitHub</Link>
 
         </div>
         {/* done designing navbar */}
@@ -50,20 +51,20 @@ function Home({ onNavigate }) {
             text="Vishal Raghav"
             className='text-6xl font-bold text-white font-mono mb-2'
           />
-          <p className='text-gray-400 text-base text-center pt-5 mb-4 '>Full-Stack Developer (MERN) Intern @ DigiVikreta |  Univiserty of Mangalaytan
-            <span className='bl;ock text-white flex items-centre justify-center'>
+          <p className='text-gray-400 text-base text-center pt-5 mb-4 '>Full-Stack Developer| 1-year Experence | Manipal Universty Jaipur
+            <span className=' text-white flex items-centre justify-center'>
               <div className='flex items-center justify-center'>
                 <span className="inline-flex w-3 h-3 mr-2 bg-[#32d74b] rounded-full opacity-30 shadow-[0_0_14px_rgba(50,215,75,0.965)]">
 
                 </span>
-                <span>Exploring opportunities in SDE, web and App devlopment, and IT roles.</span>
+                <span className='text-gray-700'>Exploring opportunities in SDE, web and App devlopment, and IT roles.</span>
               </div>
             </span>
           </p>
 
           <div className='relative h-[100px]'>
             <div className='max-w-auto mx-auto'>
-              <div className='p-4 rounded-full bg-blue-500 text-white my-2 opacity-1 transform-tanslateY(0%) translateZ(0px)'>Eager to explore opportunities, computer engineering,web devlopment , app development and Dsa</div>
+              <div className='p-4 rounded-full bg-[#aebbcc] text-white my-2 opacity-1 transform-tanslateY(0%) translateZ(0px)'>Eager to explore opportunities, computer engineering,web devlopment , app development and Dsa</div>
             </div>
           </div>
         </div>

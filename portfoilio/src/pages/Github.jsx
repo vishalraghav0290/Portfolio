@@ -187,11 +187,11 @@ export default function Github({ onNavigate }) {
               onClick={() => setIsDark(d => !d)}
               className={`p-2 rounded-full ${
                 isDark
-                  ? 'hover:bg-slate-800 text-slate-400 hover:text-white'
-                  : 'hover:bg-gray-100 text-gray-600 hover:text-gray-900'
+                  ? 'hover:bg-slate-800 text-slate-400 hover:text-white p-1'
+                  : 'hover:bg-gray-100 text-gray-600 hover:text-gray-900 p-1'
               }`}
             >
-              {isDark ? '☀️' : '🌙'}
+              {isDark ? 'Light' : 'Dark'}
             </button>
             
             <select 

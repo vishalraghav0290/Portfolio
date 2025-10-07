@@ -35,13 +35,13 @@ export default function TextUp({ text, className = '' }) {
       className={className}
     >
       
-      <span className="text-blue-400">{displayedText}</span>
+      <span className="text-red-400">{displayedText}</span>
       
       <motion.span
         initial={{ opacity: 1 }}
         animate={{ opacity: cursorVisible ? 0 : 0 }}
         transition={{ duration: 0.2 }}
-        className="inline-block w-[3px] h-[24px] bg-blue-400 ml-1"
+        className="inline-block w-[3px] h-[24px] bg-red-400 ml-1"
       />
     </motion.div>
   )
